@@ -1,0 +1,491 @@
+:root {
+  /* Palet warna hangat & natural (tidak terkesan robotik/AI) */
+  --bg: #faf9f6;
+  --surface: #f1efe9;
+  --text-main: #18181b;
+  --text-muted: #52525b;
+  --border: #e4e2dd;
+  --accent: #18181b;
+  --accent-contrast: #faf9f6;
+  --tag-bg: #eae8e1;
+}
+
+[data-theme="dark"] {
+  --bg: #111113;
+  --surface: #18181b;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+  --accent: #f4f4f5;
+  --accent-contrast: #111113;
+  --tag-bg: #222226;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Tipografi & Label */
+.mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Navigasi */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0; /* Sedikit dirampingkan agar tidak makan tempat saat scroll */
+  border-bottom: 1px solid var(--border);
+  
+  /* Tambahan agar navbar menempel di atas saat di-scroll */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg);
+  transition: background-color 0.25s ease;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.brand span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-right a:hover {
+  color: var(--text-main);
+}
+
+.theme-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.theme-btn:hover {
+  background-color: var(--surface);
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  padding: 5rem 0 4.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background-color: var(--surface);
+  padding: 0.35rem 0.8rem;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background-color: #16a34a;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.hero-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.hero-desc strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  text-decoration: none;
+  padding: 0.7rem 1.35rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+}
+
+.btn-secondary {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.7rem 0.75rem;
+}
+
+.btn-secondary:hover {
+  text-decoration: underline;
+}
+
+/* Foto Profil */
+.hero-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+.photo-frame:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.photo-caption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+}
+
+/* Section Umum */
+.section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+  margin-bottom: 2.75rem;
+}
+
+.section-header h2 {
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+}
+
+/* Daftar Proyek */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.project-image {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  aspect-ratio: 16 / 10;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-item:hover .project-image img {
+  transform: scale(1.03);
+}
+
+.project-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.project-info h3 {
+  font-size: 1.3rem;
+  margin: 0.3rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.project-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-bottom: 1.4rem;
+}
+
+.tech-list li {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background-color: var(--tag-bg);
+  color: var(--text-main);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.project-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--text-main);
+  padding-bottom: 2px;
+}
+
+.project-links a:hover {
+  opacity: 0.7;
+}
+
+/* Tentang & Keahlian */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.skills-box {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  border-radius: 8px;
+}
+
+.skills-box h4 {
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.skills-group p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Kontak */
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-section p {
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.email-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 2px solid var(--text-main);
+  padding-bottom: 2px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.social-links a:hover {
+  color: var(--text-main);
+}
+
+/* Footer */
+.footer {
+  padding: 2.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0;
+  }
+
+  .hero-photo {
+    align-items: flex-start;
+    order: -1; /* Foto muncul di atas teks saat dibuka di HP */
+  }
+
+  .photo-frame {
+    max-width: 180px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .project-item,
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+}
+
+.competency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.comp-item {
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+}
+
+.comp-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.comp-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}

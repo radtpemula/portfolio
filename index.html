@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Muhammad Radit Ramadhan - Web Developer yang fokus membangun website cepat, rapi, dan fungsional.">
+  <title>Muhammad Radit — Web Developer</title>
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Navigasi -->
+    <header class="navbar">
+      <a href="#" class="brand">Adit<span>.dev</span></a>
+      <nav class="nav-right">
+        <a href="#work">Karya</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+        <button id="theme-btn" class="theme-btn" aria-label="Ganti Tema">Gelap</button>
+      </nav>
+    </header>
+
+    <!-- Hero Section dengan Foto -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="dot"></span> Tersedia untuk proyek baru
+        </div>
+        <h1>Membangun web yang cepat, rapi, dan fungsional.</h1>
+        <p class="hero-desc">
+          Halo, saya <strong>Radit</strong>. Seorang pengembang web yang fokus merancang antarmuka bersih serta menulis kode yang terstruktur dan mudah dikelola.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn-primary">Lihat Proyek</a>
+          <a href="https://github.com/radtpemula" target="_blank" class="btn-secondary">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <!-- Ganti src dengan path foto asli kamu, misal: img/foto-saya.jpg -->
+          <img src="./foto/d075d312-8e9e-4968-ae17-89a76f35542a.jpg" alt="Foto Profil">
+        </div>
+        <p class="photo-caption">Berdomisili di Pangkalpinang</p>
+      </div>
+    </section>
+
+    <!-- Proyek Pilihan (Dengan Thumbnail Foto Proyek) -->
+    <section id="work" class="section">
+      <div class="section-header">
+        <span class="mono-label">01 / PROYEK PILIHAN</span>
+        <h2>Karya Terbaru</h2>
+      </div>
+
+      <div class="project-list">
+        <!-- Proyek 1 -->
+        <article class="project-item">
+          <div class="project-image">
+            <!-- Ganti dengan screenshot proyek asli kamu -->
+            <img src="./foto/WhatsApp Image 2026-10-24 at 15.35.20.jpeg" alt="Preview Proyek 1">
+          </div>
+          <div class="project-info">
+            <span class="project-year">2026</span>
+            <h3>Website INKINDO babel</h3>
+            <p>
+              Pengembangan situs web profil organisasi dengan sistem pengaturan informasi publik, optimasi skala antarmuka, dan panel manajemen admin.
+            </p>
+            <ul class="tech-list">
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+              <li>Prisma</li>
+            </ul>
+            <div class="project-links"> 
+              <a href="https://github.com/radtpemula/INKINDO_BABEL" target="_blank">Kode Sumber ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 2 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="./foto/Screenshot 2026-10-24 130843.png" alt="Preview Proyek 2">
+          </div>
+          <div class="project-info">
+            <span class="project-year">2025</span>
+            <h3>Web Minta Maaf</h3>
+            <p>
+              Sebuah Web untuk minta maaf kepada istri atau pacar yang sedang marah, kita bisa langsung mengirimkan link website ini ke istri atau pacar kita jika mereka gk mau ngomong sama kita saat marah.
+            </p>
+            <ul class="tech-list">
+              <li>HTML/CSS</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/radtpemula/web-sorry-yaaa" target="_blank">Kode Sumber ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tentang & Keahlian -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <span class="mono-label">02 / TENTANG SAYA</span>
+        <h2>Pendekatan & Perangkat</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Ketertarikan Saya pada pengembangan web dimulai dari rasa penasaran bagaimana sebuah situs bisa terasa begitu nyaman saat digunakan. Saya percaya desain yang baik tidak butuh hiasan rumit, melainkan kejelasan fungsi dan detail yang rapi.
+          </p>
+          <p>
+            Saat ini saya banyak bekerja dengan ekosistem modern JavaScript maupun membangun halaman statis yang ringan, sambil terus mendalami arsitektur aplikasi full-stack.
+          </p>
+        </div>
+
+        <div class="skills-box">
+          <h4>Teknologi yang Sering Digunakan</h4>
+          <div class="skills-group">
+            <div>
+              <span class="skill-category">Frontend</span>
+              <p>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Next.js, Tailwind CSS</p>
+            </div>
+            <div>
+              <span class="skill-category">Backend & Data</span>
+              <p>Node.js, Prisma ORM, SQLite, REST API</p>
+            </div>
+            <div>
+              <span class="skill-category">Alat Kerja</span>
+              <p>Git, GitHub, VS Code, Figma</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-box">
+          <h4>Fokus & Kompetensi</h4>
+          <div class="competency-list">
+            <div class="comp-item">
+              <span class="comp-title">Pengembangan Antarmuka & Tata Letak</span>
+              <p>Merancang navigasi yang intuitif, optimasi proporsi tampilan publik, serta penyesuaian desain responsif di berbagai ukuran layar.</p>
+            </div>
+            
+            <div class="comp-item">
+              <span class="comp-title">Sistem Manajemen Konten (Admin Panel)</span>
+              <p>Membangun fitur pengaturan situs dinamis, pengelolaan tautan/data organisasi, dan integrasi formulir dengan database.</p>
+            </div>
+
+            <div class="comp-item">
+              <span class="comp-title">Pengolahan Data & Dokumentasi</span>
+              <p>Menyusun struktur dokumen laporan, otomatisasi rumus spreadsheet, serta visualisasi data tabel yang rapi dan terukur.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Kontak -->
+    <section id="contact" class="section contact-section">
+      <span class="mono-label">03 / KONTAK</span>
+      <h2>Mari Berdiskusi</h2>
+      <p>Punya tawaran proyek, ajakan kolaborasi, atau sekadar ingin menyapa? Kirimkan pesan kapan saja.</p>
+      
+      <div class="contact-actions">
+        <a href="mailto:reynadyamazaki@gmail.com" class="email-link">reynadyamazaki@gmail.com ↗</a>
+        <div class="social-links">
+          <a href="https://github.com/radtpemula" target="_blank">GitHub</a>
+          <a href="https://id.linkedin.com/in/muhammad-radith-ramadhan-9b7416371" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/mrdit.01" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© <span id="year"></span> Muhammad Radit Ramadhan.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
